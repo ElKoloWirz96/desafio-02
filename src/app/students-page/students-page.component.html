@@ -1,0 +1,37 @@
+<div class=" agregarAlumno ">
+  <input type=" text " id=" ingresarAlumno " [(ngModel)] = " nuevoAlumnoNombre ">
+  <button (click)=" agregarAlumno() " >Agregar Alumno</button>
+</div>
+
+<div class=" mostrarLista ">
+  <button (click)="toggleMostrarLista()">Mostrar Lista</button>
+</div>
+
+<div *ngIf="mostrarLista" class="grid-container">
+
+  <!--  Mostar lista de estudiantes  -->
+
+  <div *ngFor="let students of students" class="grid-item">
+
+    <!-- Grilla de la lista de estudiantes -->
+
+    <span [ngClass]="{
+      'success': students.aprobado,
+      'error': !students.aprobado
+    }"> {{ students.nombre }} </span>
+    <label>
+      Aprobado:
+      <select (change)="onSelectChange($event, students)">
+        <option value="true">Aprobado</option>
+        <option value="false">Desaprobado</option>
+      </select>
+      <div [ngSwitch]="students.aprobado">
+        <p *ngSwitchCase="true">Aprobaste</p>
+        <p *ngSwitchCase="false">Desaprobaste</p>
+        <p *ngSwitchDefault>Nota: Calificación no obtenida</p>
+      </div>
+    </label>
+  </div>
+</div>
+
+

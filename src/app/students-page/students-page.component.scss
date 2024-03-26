@@ -1,0 +1,46 @@
+//Grilla de la lista de alumnos
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .grid-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+
+// Colores de aprobado y desaprobado
+
+.grid-item .success {
+  color: green;
+}
+
+.grid-item .error {
+  color: red;
+}
+
+// Estilos de los botones
+// Estilo de agregarAlumno
+
+.agregarAlumno {
+  display: flex;
+  margin-top: 3px;
+}
+input {
+  border-radius: 8px;
+  margin-right: 5px;
+}
+
+// Estilo de mostrarLista
+
+.mostrarLista {
+  display: flex;
+  margin-top: 5px;
+}
+
+button {
+  border-radius: 8px;
+}
